@@ -16,7 +16,7 @@
     - "btn-text" - the label used in the link btn to view the carousel item (optional, default "View Item")
     
 {%- endcomment -%}
-{% include index/carousel.html title="Sample Items" %}
+
 {%- assign image-items = site.data[site.metadata ] | where_exp: 'item', 'item.objectid' | where_exp: "item","item.format contains 'image'" -%}
 {%- assign youtube-items = site.data[site.metadata ] | where_exp: 'item', 'item.objectid' | where_exp: "item","item.youtubeid" -%}
 {%- if youtube-items -%}{%- assign carousel-items = image-items | concat: youtube-items -%}{%- else -%}{%- assign carousel-items = image-items -%}{% endif %}
